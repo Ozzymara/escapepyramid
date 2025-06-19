@@ -1,110 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Page title displayed in the browser tab -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Pyramid Escape</title>
+  <!-- Page title displayed in the browser tab -->
 
-    <link
-        rel="icon"
-        type="image/png"
-        href="assets/images/favicon.webp"
-    >
+  <title>Pyramid Escape</title>
 
-    <!-- External JS for title scroll effect -->
-    <script src="assets/js/scroll-title.js"></script>
+  <link rel="icon" type="image/png" href="assets/images/favicon.webp">
 
-    <style>
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        font-family: Arial, sans-serif;
-      }
+  <!-- External JS for title scroll effect -->
+  <script src="assets/js/scroll-title.js"></script>
 
-      #splash {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background-image: url(assets/images/splash.jpg);
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: white;
-        transition: opacity 1s ease-in-out;
-      }
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
 
-      #splash h1 {
-        font-size: 2rem;
-        text-shadow: 2px 2px 5px black;
-        font-family: "Papyrus", fantasy;
-      }
+    #splash {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-image: url(assets/images/splash.jpg);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      transition: opacity 1s ease-in-out;
+    }
 
-      button {
-        background: linear-gradient(145deg, #c2a86e 60%, #9e7c43 100%);
-        border: 4px solid #8a6834;
-        font-family: "Papyrus", fantasy;
-        font-size: 18px;
-        font-weight: bold; /* Make text bold */
-        color: #111; /* Make text black */
-        padding: 16px 32px;
-        border-radius: 12px 18px 8px 20px; /* Uneven corners for stone effect */
-        box-shadow: 0 4px 12px rgba(80, 60, 20, 0.3),
-          inset 2px 2px 8px #fff8dc44, inset -4px -4px 12px #8a6834cc;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: background 0.3s, box-shadow 0.3s, transform 0.1s;
-        letter-spacing: 2px;
-        position: relative;
-        outline: none;
-      }
+    #splash h1 {
+      font-size: 2rem;
+      text-shadow: 2px 2px 5px black;
+      font-family: "Papyrus", fantasy;
+    }
 
-      button:active {
-        background: linear-gradient(145deg, #9e7c43 60%, #c2a86e 100%);
-        box-shadow: 0 2px 6px rgba(80, 60, 20, 0.2), inset 1px 1px 4px #fff8dc44,
-          inset -2px -2px 6px #8a6834cc;
-        transform: translateY(2px) scale(0.98);
-      }
+    button {
+      background: linear-gradient(145deg, #c2a86e 60%, #9e7c43 100%);
+      border: 4px solid #8a6834;
+      font-family: "Papyrus", fantasy;
+      font-size: 18px;
+      font-weight: bold;
+      /* Make text bold */
+      color: #111;
+      /* Make text black */
+      padding: 16px 32px;
+      border-radius: 12px 18px 8px 20px;
+      /* Uneven corners for stone effect */
+      box-shadow: 0 4px 12px rgba(80, 60, 20, 0.3),
+        inset 2px 2px 8px #fff8dc44, inset -4px -4px 12px #8a6834cc;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s, box-shadow 0.3s, transform 0.1s;
+      letter-spacing: 2px;
+      position: relative;
+      outline: none;
+    }
 
-      button:hover {
-        background: linear-gradient(145deg, #e0c88a 60%, #b08a4a 100%);
-        box-shadow: 0 6px 18px rgba(80, 60, 20, 0.4), 0 0 8px #ffe4a1aa;
-        color: #6d4c2c;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="splash">
-      <button id="logo">PYRAMID ESCAPE</button>
-      <h1>
-        Can you make the right choices and escape the curse of the pyramid?
-      </h1>
-      <button id="startButton">Press Start</button>
-    </div>
+    button:active {
+      background: linear-gradient(145deg, #9e7c43 60%, #c2a86e 100%);
+      box-shadow: 0 2px 6px rgba(80, 60, 20, 0.2), inset 1px 1px 4px #fff8dc44,
+        inset -2px -2px 6px #8a6834cc;
+      transform: translateY(2px) scale(0.98);
+    }
 
-    <script>
-      const startButton = document.getElementById("startButton");
-      const splashScreen = document.getElementById("splash");
+    button:hover {
+      background: linear-gradient(145deg, #e0c88a 60%, #b08a4a 100%);
+      box-shadow: 0 6px 18px rgba(80, 60, 20, 0.4), 0 0 8px #ffe4a1aa;
+      color: #6d4c2c;
+    }
+  </style>
+</head>
 
-      startButton.addEventListener("click", () => {
-        localStorage.setItem("playMusic", "true");
-        splashScreen.style.opacity = "0";
-        setTimeout(() => {
-          window.location.href = "game.html";
-        }, 1000);
-      });
-    </script>
-    <!--Added as test-->
-  </body>
+<body>
+  <div id="splash">
+    <button id="logo">PYRAMID ESCAPE</button>
+    <h1>
+      Can you make the right choices and escape the curse of the pyramid?
+    </h1>
+    <button id="startButton">Press Start</button>
+  </div>
+
+  <button id="muteToggle"
+    style="position: absolute; top: 24px; right: 32px; z-index: 10; background: rgba(0,0,0,0.4); color: #fff; border: none; border-radius: 8px; padding: 8px 16px; font-size: 16px; cursor: pointer;">
+    🔊 Mute
+  </button>
+  <script>
+    const startButton = document.getElementById("startButton");
+    const splashScreen = document.getElementById("splash");
+    const muteToggle = document.getElementById("muteToggle");
+
+    // Set initial mute state from localStorage
+    let isMuted = localStorage.getItem("muted") === "true";
+    updateMuteButton();
+
+    muteToggle.addEventListener("click", () => {
+      isMuted = !isMuted;
+      localStorage.setItem("muted", isMuted);
+      updateMuteButton();
+    });
+
+    function updateMuteButton() {
+      muteToggle.textContent = isMuted ? "🔇 Unmute" : "🔊 Mute";
+    }
+
+    startButton.addEventListener("click", () => {
+      localStorage.setItem("playMusic", "true");
+      splashScreen.style.opacity = "0";
+      setTimeout(() => {
+        window.location.href = "game.html";
+      }, 1000);
+    });
+  </script>
+  });
+  </script>
+  <!--Added as test-->
+</body>
+
 </html>
-
