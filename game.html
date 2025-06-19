@@ -58,11 +58,12 @@
 
     if (shouldPlay) {
       bgMusic.play().catch(err => console.log('Playback failed:', err));
+      localStorage.removeItem('playMusic');
     }
   </script>
   </script>
         <!-- RESPONSIVENESS GUIDE 🔴 -->
-    <!-- <div id="modeBox">Loading mode...</div>
+    <div id="modeBox">Loading mode...</div>
 
 <script>
   function updateModeBox() {
@@ -86,7 +87,7 @@
   }
 
   window.addEventListener('resize', updateModeBox);
-  window.addEventListener('load', updateModeBox); -->
+  window.addEventListener('load', updateModeBox);
 </script>
     <div id="main-content">
         <h1>Pyramid Escape</h1>
