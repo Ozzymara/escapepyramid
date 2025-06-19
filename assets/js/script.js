@@ -1,5 +1,5 @@
 const storyImage = document.getElementById("storyImage");
-const storyText = document.getElementById("Text");
+const storyText = document.getElementById("story");
 const choices = document.getElementById("choices");
 
 let passwordKnown = false;

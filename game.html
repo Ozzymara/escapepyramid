@@ -79,25 +79,25 @@
         </p>
 
 <script>
-  function scrollToMainContent() {
-    const target = document.getElementById("main-content");
+  function scrollTostoryImage() {
+    const target = document.getElementById("storyImage");
     if (target) {
       // Delay the scroll slightly to allow LCP measurement
       requestAnimationFrame(() => {
         setTimeout(() => {
-          target.scrollIntoView({ behavior: "smooth" });
-        }, 100); // Try tweaking this delay (50–200ms) for best results
+          target.scrollIntoView({ behavior: "auto" });
+        }, 5); // Try tweaking this delay (50–200ms) for best results
       });
     }
   }
 
   // Delay scroll to happen after a short wait post-load
-  window.addEventListener("load", scrollToMainContent);
+  window.addEventListener("load", scrollTostoryImage);
 
   // Still capture future button clicks
   document.addEventListener("click", event => {
     if (event.target.tagName.toLowerCase() === "button") {
-      scrollToMainContent();
+      scrollTostoryImage();
     }
   });
 </script>
@@ -105,7 +105,6 @@
         <div id="choices">
             <button onclick="choosePath('tomb')">Push against the enclosure above</button>
             <button onclick="choosePath('search')">Feel your surroundings</button>
-            <button onclick="choosePath('ladder')"> 🛠️</button> <!--🔴 remove from final version -->
         </div>
     </div>
 
