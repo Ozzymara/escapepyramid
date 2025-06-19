@@ -1,9 +1,34 @@
 /*
 GLOBAL STYLES
-SET body font to 'Papyrus', center-align text, black background
-SET body background image to 'main.webp', cover entire viewport
-APPLY white text, padding, and a dark transparent overlay via ::before
+body {
+    font-family: 'Papyrus', fantasy; /* Ancient-style font */
+    text-align: center;
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+    /* Add background image */
+    background-image: url('../images/main.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    /* Add dark overlay using a pseudo-element */
+    position: relative;
+    z-index: 1;
+}
 
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.75); /* Adjust opacity for darkness */
+    z-index: -1;
+    pointer-events: none;
+}
+/*
 DEFINE h1:
   - Use Papyrus font
   - Large sandstone-styled uppercase text with shadow and border
