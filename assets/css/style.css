@@ -116,11 +116,38 @@ button:hover {
     color: #6d4c2c;
 }
 
+/* ...existing code... */
 
-  ANIMATION
-DEFINE @keyframes glowRotation:
-  - Loop through rotating highlights around image border
-APPLY to images on hover
+img {
+    border-radius: 10%;
+    border: 5px solid rgba(194, 168, 110, 0.8); /* Sand-colored border */
+    box-shadow: 0px 0px 15px rgba(194, 168, 110, 0.6);
+    animation: glowRotation 4s infinite linear;
+}
+
+/* Rotating glow animation */
+@keyframes glowRotation {
+    0% { box-shadow: 0px 0px 15px rgba(194, 168, 110, 0.6); }
+    25% { box-shadow: 10px -10px 20px rgba(194, 168, 110, 0.8); }
+    50% { box-shadow: -10px 10px 20px rgba(194, 168, 110, 1); }
+    75% { box-shadow: 10px 10px 20px rgba(194, 168, 110, 0.8); }
+    100% { box-shadow: 0px 0px 15px rgba(194, 168, 110, 0.6); }
+}
+
+/* Apply animation */
+img:hover {
+    animation: sandFlow 2s infinite alternate ease-in-out;
+}
+
+/* Buttons Section */
+#choices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px; /* Extra spacing */
+}
+/* Button styles *
 MINI-GAME SLOT STYLING (Jackpot-style)
 #jackpot-machine:
   - Center and space slots evenly
