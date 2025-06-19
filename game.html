@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Meta tags -->
+
+    <meta
+        name="description"
+        content="Pyramid Escape is an adventure game where you solve puzzles and escape the ancient pyramid."
+    >
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <!-- Page title displayed in the browser tab -->
+
+    <title>Pyramid Escape</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/images/favicon.webp"
+    >
+
+    <!-- External CSS -->
+
+    <link
+        rel="stylesheet"
+        href="/assets/css/style.css"
+    >
+
+    <!-- External JS for title scroll effect -->
+    <script src="assets/js/scroll-title.js"></script>
+</head>
+
+<body>
+
+
+<!-- RESPONSIVENESS GUIDE 🔴
+    <div id="modeBox">Loading mode...</div>
+
+<script>
+  function updateModeBox() {
+    const width = window.innerWidth;
+    const box = document.getElementById('modeBox');
+    let mode = "";
+
+    if (width <= 414) {
+      mode = "📱 Mobile Mode (≤ 414px)";
+    } else if (width >= 601 && width <= 1280) {
+      mode = "📟 Tablet Mode (601–1280px)";
+    } else if (width >= 1024 && width <= 1279) {
+      mode = "💻 Laptop Mode (1024–1279px)";
+    } else if (width >= 1280) {
+      mode = "🖥️ Desktop Mode (≥ 1280px)";
+    } else {
+      mode = "Unknown Mode";
+    }
+
+    box.textContent = `${mode} | Width: ${width}px`;
+  }
+
+  window.addEventListener('resize', updateModeBox);
+  window.addEventListener('load', updateModeBox); -->
+<!-- </script> -->
+
+
+    <div id="main-content">
+        <h1>Pyramid Escape</h1>
+
+        <img
+            id="storyImage"
+            src="assets/images/darkness.webp"
+            alt="Image description in story text below"
+        >
+
+        <p id="story">
+            You open your eyes to darkness.<br> The air is thick with dust, <br>and your body feels restrained.<br>
+            You realise you are lying down<br>trapped in a small, enclosed space.<br><br>
+            Is this a tomb? A prison? You don’t know yet.<br><br>
+            You must act quickly<br><br>Either push against the enclosure <br>or feel your surroundings.
+        </p>
+
+<script>
+  function scrollToMainContent() {
+    const target = document.getElementById("main-content");
+    if (target) {
+      // Delay the scroll slightly to allow LCP measurement
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth" });
+        }, 100); // Try tweaking this delay (50–200ms) for best results
+      });
+    }
+  }
+
+  // Delay scroll to happen after a short wait post-load
+  window.addEventListener("load", scrollToMainContent);
+
+  // Still capture future button clicks
+  document.addEventListener("click", event => {
+    if (event.target.tagName.toLowerCase() === "button") {
+      scrollToMainContent();
+    }
+  });
+</script>
+
+        <div id="choices">
+            <button onclick="choosePath('tomb')">Push against the enclosure above</button>
+            <button onclick="choosePath('search')">Feel your surroundings</button>
+            <button onclick="choosePath('ladder')"> 🛠️</button> <!--🔴 remove from final version -->
+        </div>
+    </div>
+
+            <!-- Main Game Script -->
+            <script src="/assets/js/script.js"></script>
+            <!-- Footer -->
+    <!--Footer section-->
+    <footer class="d-flex justify-content-center mt-5">
+        <div>
+            <a href="https://ozzymara.github.io/pyramid-escape/" target="blank" aria-label="github-link-escape pyramid"><i
+                    class="fa-brands" style="color: #b08a4a;">&copy; 2025 DOA - Pyramid Escape . </i></a>
+                    <a href="https://github.com/ozzymara" target="blank" aria-label="github-link-ozzy"><i
+                    class="fa-brands fa-github" style="color: #b08a4a;">Ozzy . </i></a>
+                    <a href="https://github.com/andreafitz" target="blank" aria-label="github-link-andrea"><i
+                    class="fa-brands fa-github" style="color: #b08a4a;">Andrea . </i></a>
+                    <a href="https://github.com/davidshergold" target="blank" aria-label="github-link-david"><i
+                    class="fa-brands fa-github" style="color: #b08a4a;">David</i></a>
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+
+    <!--Java Script Linked-->
+    <script src="assets/JS/script.js"></script>
+
+    <!--Font Awesome Kit-->
+    <script src="https://kit.fontawesome.com/44c5112f86.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
