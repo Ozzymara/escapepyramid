@@ -62,33 +62,6 @@
     }
   </script>
 
-        <!-- RESPONSIVENESS GUIDE 🔴 -->
-    <div id="modeBox">Loading mode...</div>
-
-<script>
-  function updateModeBox() {
-    const width = window.innerWidth;
-    const box = document.getElementById('modeBox');
-    let mode = "";
-
-    if (width <= 414) {
-      mode = "📱 Mobile Mode (≤ 414px)";
-    } else if (width >= 601 && width <= 1280) {
-      mode = "📟 Tablet Mode (601–1280px)";
-    } else if (width >= 1024 && width <= 1279) {
-      mode = "💻 Laptop Mode (1024–1279px)";
-    } else if (width >= 1280) {
-      mode = "🖥️ Desktop Mode (≥ 1280px)";
-    } else {
-      mode = "Unknown Mode";
-    }
-
-    box.textContent = `${mode} | Width: ${width}px`;
-  }
-
-  window.addEventListener('resize', updateModeBox);
-  window.addEventListener('load', updateModeBox);
-</script>
     <div id="main-content">
         <h1>Pyramid Escape</h1>
 
