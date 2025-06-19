@@ -7,5 +7,73 @@
 </head>
 <body>
     
+    <!-- START
+
+DEFINE HTML Document:
+  - Set language to English
+  - Set character encoding to UTF-8
+  - Include metadata for viewport responsiveness and page description
+  - Set page title: "Pyramid Escape"
+  - Link favicon image
+  - Link external CSS and JS files
+
+BODY CONTENT:
+
+  ADD background audio element:
+    - Source: "Valley of Time.mp3"
+    - Autoplay enabled
+
+  ON page load:
+    - CHECK localStorage for key "playMusic" set to "true"
+    - IF true:
+        - TRY to play the background music
+        - REMOVE "playMusic" flag from localStorage
+    - ELSE: Do nothing
+
+  DISPLAY a div with id "modeBox" to show current screen mode (Mobile, Tablet, etc.)
+
+  FUNCTION updateModeBox():
+    - GET window width
+    - BASED ON width range, set corresponding mode label:
+        - ≤ 414: Mobile
+        - 601–1280: Tablet
+        - 1024–1279: Laptop
+        - ≥ 1280: Desktop
+        - Else: Unknown
+    - UPDATE #modeBox content with mode and screen width
+    - LISTEN for window resize and load events to trigger updateModeBox
+
+  MAIN CONTENT container:
+    - Show title "Pyramid Escape"
+    - Display image of darkness
+    - Story text describing the scene:
+        - Player awakens in darkness
+        - Must choose between pushing up or feeling surroundings
+
+  ON window load:
+    - DELAY slightly and scroll smoothly to main content for better user experience
+
+  ON user clicking any button:
+    - Scroll smoothly to main content again (even after interaction)
+
+  DISPLAY CHOICE BUTTONS:
+    - "Push against the enclosure above" triggers choosePath('tomb')
+    - "Feel your surroundings" triggers choosePath('search')
+    - A 🛠️ debug button for development/testing (to be removed before release)
+
+  LOAD game logic via external script.js file
+
+FOOTER SECTION:
+  - Display GitHub and project credits: Ozzy, Andrea, David
+
+ADDITIONAL AUDIO:
+  - Play background looped audio (separate from intro music)
+
+INCLUDE external libraries:
+  - Bootstrap JS bundle for UI utilities
+  - FontAwesome Kit for icon rendering
+
+END -->
+
 </body>
 </html>

@@ -1,0 +1,67 @@
+/*
+GLOBAL STYLES
+SET body font to 'Papyrus', center-align text, black background
+SET body background image to 'main.webp', cover entire viewport
+APPLY white text, padding, and a dark transparent overlay via ::before
+
+DEFINE h1:
+  - Use Papyrus font
+  - Large sandstone-styled uppercase text with shadow and border
+  - Gradient background for texture
+
+SET paragraphs:
+  - Light parchment tone, smooth fade transition on opacity
+
+STYLE buttons:
+  - Use ancient stone color palette
+  - Uneven border-radius for carved look
+  - Shadow and gradient for depth
+  - Hover: Highlight glow and color shift
+  - Active: Pressed-in effect
+ELEMENT-SPECIFIC STYLES
+#storyImage:
+  - Center the image
+  - Responsive width (50%), with sand-colored border and glow animation
+
+#story:
+  - Styled scroll-like box with padding, border, parchment tone, and max width
+
+#choices:
+  - Arrange buttons in a flexible row, center-aligned with gaps
+ANIMATION
+DEFINE @keyframes glowRotation:
+  - Loop through rotating highlights around image border
+APPLY to images on hover
+MINI-GAME SLOT STYLING (Jackpot-style)
+#jackpot-machine:
+  - Center and space slots evenly
+
+Each .slot:
+  - Stylized square using gradients and engraved effects
+  - Large symbol text in center
+RESPONSIVE DESIGN BREAKPOINTS
+Mobile (≤600px):
+
+Reduce font sizes, shrink buttons
+Make image nearly full-width
+Stack layout vertically
+Tablet (601px–900px):
+
+Medium font sizes
+Adjust paddings and image width
+Increase spacing between elements
+Laptop (901px–1200px):
+
+Slightly increased story size and width
+Optimize layout with more space for text and images
+Desktop (≥1201px):
+
+Maintain optimal large-screen proportions
+Apply full content widths and padding
+LAYOUT CONTAINER
+#main-content:
+  - Central flex column layout
+  - Max width constraints and centered alignment
+  - Optional translucent background
+FOOTER LINKS
+Footer links: white, underlined, highlighted on hover (sand color)
