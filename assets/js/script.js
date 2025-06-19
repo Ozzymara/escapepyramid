@@ -145,47 +145,58 @@ setTimeout(function () {
         }
     }
 
-};
-// JACKPOT CHAMBER ENTRY
-// IF player chooses 'jackpot':
-//   - Clear existing choice buttons
-//   - Display ancient slot machine story text
-//   - Show 3 spinning symbols (slot1, slot2, slot3)
-//   - Show "Pull the lever" button
-// PASSWORD CHECK FUNCTION (checkPassword)
-// GET user input from password field
-// TRIM and convert to lowercase
+function checkPassword() {
+    let userPassword = document.getElementById("passwordInput").value.trim();
 
-// IF input equals "]":
-//   - Proceed to tunnel (successful password)
-// ELSE:
-//   - Display sand-death curse text
-//   - Show buried image
-//   - Offer "Reincarnate" button
-// JACKPOT PLAY FUNCTION (playJackpot)
-// GET references to slot1, slot2, slot3 elements
+    if (userPassword.toLowerCase() === "]") {
+        choosePath("tunnel"); // Proceed if correct
+    } else {
+        storyText.innerHTML = "💀 <br>The chamber trembles as ancient mechanisms groan to life.<br> A hiss fills the air—sand spills from unseen vents, <br>rushing like a tidal wave. <br>You claw at the walls, <br>but the golden grains rise, engulfing you. <br><br> Breath fades,<br> time slows… <br><br> the desert claims <br><br> another lost soul.";
+        storyImage.src = imageMap.buried; // Send player to sand death scene if password is incorrect
+        choices.innerHTML = `<button onclick="choosePath('restart')">Reincarnate</button>`;
+    }
+}
 
-// SELECT a random symbol combination from list of combos
+function playJackpot() {
+    let slot1 = document.getElementById("slot1");
+    let slot2 = document.getElementById("slot2");
+    let slot3 = document.getElementById("slot3");
 
-// TEMPORARILY animate all 3 slots (scale up)
+    let randomCombo = jackpotCombinations[Math.floor(Math.random() * jackpotCombinations.length)];
 
-// AFTER 1 second:
-//   - Reset slot scale
-//   - Display new symbols in each slot
+    slot1.style.transform = "scale(1.2)";
+    slot2.style.transform = "scale(1.2)";
+    slot3.style.transform = "scale(1.2)";
 
-// IF all 3 symbols are 🏺 (win condition):
-//   - Display escape narrative
-//   - Show escape image
-//   - Offer "Play Again" button
-// ELSE:
-//   - INCREMENT jackpotAttempts
-//   - IF player has failed 3 times:
-//       - Display burial death text
-//       - Show buried image
-//       - Offer "Reincarnate" button
-//     ELSE:
-//       - Prompt with "Try Again" button and current attempt count
-// FINAL SETUP
-// MAKE 'checkPassword' and 'playJackpot' available globally
-// (for use in HTML inline event handlers)
+setTimeout(function () {
+  slot1.style.transform = "scale(1)";
+  slot2.style.transform = "scale(1)";
+  slot3.style.transform = "scale(1)";
+
+  slot1.textContent = randomCombo[0];
+  slot2.textContent = randomCombo[1];
+  slot3.textContent = randomCombo[2];
+}, 1000);
+
+        if (randomCombo[0] === "🏺" && randomCombo[1] === "🏺" && randomCombo[2] === "🏺") {
+            storyText.innerHTML = "🏺🏺🏺  <br> The reels halt into place  <br> with a resounding click,  <br> glowing with ancient magic. <br> <br> A deep rumble shakes the chamber <br> as a stone door grinds open,  <br> revealing golden light beyond.  <br> <br> You step forward,  <br> the scent of fresh air filling your lungs.  <br> <br> As you step into the open air,  <br> the warmth of the desert sun  <br> embraces you.  <br> <br> You turn back,  <br> expecting to see  <br> the towering structure that held you captive <br> but the pyramid is gone.  <br> <br> Where once stood stone  <br> and ancient carvings,  <br> there is only endless sand  <br> shifting under the breeze.  <br> <br> A mirage,  <br> a mystery lost to time.  <br> <br> In the far distance,  <br> beyond the shimmering heat,  <br> a vast sea stretches toward the horizon,  <br> its waves glinting under the golden sky ... <br>  <br>";
+
+            storyImage.src = imageMap.escaped; // Update to escape image
+            choices.innerHTML = `<button onclick="choosePath('restart')">Play Again</button>`;
+        } else {
+            jackpotAttempts = jackpotAttempts + 1;
+            if (jackpotAttempts >= 3) {
+                storyText.innerHTML = "💀 <br><br> The chamber trembles<br> as ancient mechanisms groan to life. <br><br> A hiss fills the air—<br>sand spills from unseen vents, <br>rushing like a tidal wave. <br><br> You claw at the walls, <br>but the golden grains rise, <br>engulfing you. <br><br> Breath fades, <br>time slows… <br>the desert claims <br><br> another lost soul.";
+
+                storyImage.src = imageMap.buried; // Update to buried image upon failure
+                choices.innerHTML = `<button onclick="choosePath('restart')">Reincarnate</button>`;
+            } else {
+                choices.innerHTML = `<button onclick="playJackpot()">Try Again (${jackpotAttempts}/3)</button>`;
+            }
+        }
+}
+
+// Expose functions to the global scope for inline HTML event handlers
+window.checkPassword = checkPassword;
+window.playJackpot = playJackpot;
 
