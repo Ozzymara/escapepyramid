@@ -74,37 +74,7 @@
 
   window.addEventListener('resize', updateModeBox);
   window.addEventListener('load', updateModeBox); -->
-
-
-<!-- RESPONSIVENESS GUIDE 🔴
-    <div id="modeBox">Loading mode...</div>
-
-<script>
-  function updateModeBox() {
-    const width = window.innerWidth;
-    const box = document.getElementById('modeBox');
-    let mode = "";
-
-    if (width <= 414) {
-      mode = "📱 Mobile Mode (≤ 414px)";
-    } else if (width >= 601 && width <= 1280) {
-      mode = "📟 Tablet Mode (601–1280px)";
-    } else if (width >= 1024 && width <= 1279) {
-      mode = "💻 Laptop Mode (1024–1279px)";
-    } else if (width >= 1280) {
-      mode = "🖥️ Desktop Mode (≥ 1280px)";
-    } else {
-      mode = "Unknown Mode";
-    }
-
-    box.textContent = `${mode} | Width: ${width}px`;
-  }
-
-  window.addEventListener('resize', updateModeBox);
-  window.addEventListener('load', updateModeBox); -->
-<!-- </script> -->
-
-
+</script>
     <div id="main-content">
         <h1>Pyramid Escape</h1>
 
@@ -169,6 +139,11 @@
         </div>
 
     </footer>
+
+    <audio id="background-audio" loop>
+        <source src="assets/audio/backgroundaudio.mp3" type="audio/mp3">
+
+    </audio>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
