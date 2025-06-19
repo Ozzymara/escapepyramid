@@ -37,15 +37,29 @@
 
 <body>
 
-  <audio id="bgMusic" src="assets/audio/Valley of Time.mp3" autoplay></audio>
+  <audio id="bgMusic" src="assets/audio/Valley of Time.mp3" autoplay loop></audio>
+  <button id="muteToggle" aria-label="Toggle music" style="position:fixed;top:1rem;right:1rem;z-index:1000;">🔊</button>
 
   <script>
     const bgMusic = document.getElementById('bgMusic');
+    const muteBtn = document.getElementById('muteToggle');
     const shouldPlay = localStorage.getItem('playMusic') === 'true';
+
+    // Restore mute state from localStorage
+    const isMuted = localStorage.getItem('musicMuted') === 'true';
+    bgMusic.muted = isMuted;
+    muteBtn.textContent = isMuted ? '🔇' : '🔊';
+
+    muteBtn.addEventListener('click', () => {
+      bgMusic.muted = !bgMusic.muted;
+      muteBtn.textContent = bgMusic.muted ? '🔇' : '🔊';
+      localStorage.setItem('musicMuted', bgMusic.muted);
+    });
 
     if (shouldPlay) {
       bgMusic.play().catch(err => console.log('Playback failed:', err));
     }
+  </script>
   </script>
         <!-- RESPONSIVENESS GUIDE 🔴 -->
     <!-- <div id="modeBox">Loading mode...</div>
