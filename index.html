@@ -90,8 +90,8 @@
   </style>
 </head>
 
-<body>
-  <div id="splash">
+<body role="document">
+  <div id="splash" role="main" aria-labelledby="logo" aria-describedby="splash-desc">
     <h1 id="logo" style="
       font-size: 3rem;
       margin-bottom: 24px;
@@ -111,16 +111,42 @@
     ">
       PYRAMID ESCAPE
     </h1>
-    <h1>
-      Can you make the right choices and escape the curse of the pyramid?
-    </h1>
-    <button id="startButton">Press Start</button>
+</h1>
+
+<h1 id="splash-desc" style="opacity: 1; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0, 0.1);">
+Can you make the right choices and escape the curse of the pyramid?
+</h1>
+    <button id="startButton" role="button" aria-label="Start the game">Press Start</button>
   </div>
 
   <button id="muteToggle"
+    role="button"
+    aria-pressed="false"
+    aria-label="Mute or unmute game audio"
     style="position: absolute; top: 24px; right: 32px; z-index: 10; background: rgba(0,0,0,0.4); color: #fff; border: none; border-radius: 8px; padding: 8px 16px; font-size: 16px; cursor: pointer;">
     🔊 Mute
   </button>
+  <!-- Audio transcript for accessibility -->
+  <div
+    id="bgMusic-transcript"
+    style="position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden"
+  >
+    <p>
+      "Valley of Time" by Athena IV is an immersive journey into the heart of
+      ancient Egypt, with atmospheric ambient music that evokes the mysteries
+      of the desert sands and the echoes of a forgotten civilization. Let the
+      haunting melodies and subtle rhythms transport you to a time of pharaohs,
+      sacred temples, and the timeless flow of the Nile. Perfect for meditation,
+      study, or simply losing yourself in the mystical world of ancient Egypt.
+    </p>
+    <p>
+      Ancient Egyptian ambient music creates an otherworldly atmosphere that
+      blends serene, meditative tones with the mystique of a lost civilization.
+      These evocative soundscapes are ideal for meditation, deep focus, or
+      relaxation, allowing you to explore the echoes of history in a peaceful
+      and immersive setting.
+    </p>
+  </div>
   <script>
     const startButton = document.getElementById("startButton");
     const splashScreen = document.getElementById("splash");
@@ -138,6 +164,7 @@
 
     function updateMuteButton() {
       muteToggle.textContent = isMuted ? "🔇 Unmute" : "🔊 Mute";
+      muteToggle.setAttribute("aria-pressed", isMuted ? "true" : "false");
     }
 
     startButton.addEventListener("click", () => {

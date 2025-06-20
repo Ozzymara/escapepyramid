@@ -25,16 +25,41 @@
     <script src="assets/js/scroll-title.js"></script>
   </head>
 
-  <body>
+  <body role="document">
     <audio
       id="bgMusic"
       src="assets/audio/ValleyOfTime.mp3"
       autoplay
       loop
+      aria-label="Background music"
     ></audio>
+    
+    <!-- Audio transcript for accessibility -->
+    <div
+      id="bgMusic-transcript"
+      style="position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden"
+    >
+      <p>
+        "Valley of Time" by Athena IV is an immersive journey into the heart of
+        ancient Egypt, with atmospheric ambient music that evokes the mysteries
+        of the desert sands and the echoes of a forgotten civilization. Let the
+        haunting melodies and subtle rhythms transport you to a time of pharaohs,
+        sacred temples, and the timeless flow of the Nile. Perfect for meditation,
+        study, or simply losing yourself in the mystical world of ancient Egypt.
+      </p>
+      <p>
+        Ancient Egyptian ambient music creates an otherworldly atmosphere that
+        blends serene, meditative tones with the mystique of a lost civilization.
+        These evocative soundscapes are ideal for meditation, deep focus, or
+        relaxation, allowing you to explore the echoes of history in a peaceful
+        and immersive setting.
+      </p>
+    </div>
     <button type="button"
       id="muteToggle"
       aria-label="Toggle music"
+      aria-pressed="false"
+      role="button"
       style="position: fixed; top: 1rem; right: 1rem; z-index: 1000"
     >
       🔊
@@ -50,11 +75,16 @@
       bgMusic.muted = isMuted;
       muteBtn.textContent = isMuted ? "🔇" : "🔊";
 
+      function updateMuteAria() {
+        muteBtn.setAttribute("aria-pressed", bgMusic.muted ? "true" : "false");
+      }
       muteBtn.addEventListener("click", () => {
         bgMusic.muted = !bgMusic.muted;
         muteBtn.textContent = bgMusic.muted ? "🔇" : "🔊";
         localStorage.setItem("musicMuted", bgMusic.muted);
+        updateMuteAria();
       });
+      updateMuteAria();
 
       if (shouldPlay) {
         bgMusic.play().catch((err) => console.log("Playback failed:", err));
@@ -62,15 +92,17 @@
       }
     </script>
 
-    <main id="main-content">
-      <header>
-        <h1>Pyramid Escape</h1>
+    <main id="main-content" role="main" aria-labelledby="game-title">
+      <header role="banner">
+        <h1 id="game-title">Pyramid Escape</h1>
       </header>
 
       <img
         id="storyImage"
         src="assets/images/darkness.webp"
         alt="Image description in story text below"
+        role="img"
+        aria-describedby="story"
       />
 
       <p id="story">
@@ -107,11 +139,11 @@
         });
       </script>
 
-      <div id="choices">
-        <button type="button" onclick="choosePath('tomb')">
+      <div id="choices" role="group" aria-label="Game choices">
+        <button type="button" onclick="choosePath('tomb')" role="button" aria-label="Push against the enclosure above">
           Push against the enclosure above
         </button>
-        <button type="button" onclick="choosePath('search')">Feel your surroundings</button>
+        <button type="button" onclick="choosePath('search')" role="button" aria-label="Feel your surroundings">Feel your surroundings</button>
       </div>
     </main>
 
@@ -119,7 +151,7 @@
     <script src="assets/js/script.js"></script>
     <!-- Footer -->
     <!--Footer section-->
-    <footer class="d-flex justify-content-center mt-5">
+    <footer class="d-flex justify-content-center mt-5" role="contentinfo">
       <div>
         <a
           href="https://ozzymara.github.io/pyramid-escape/"
