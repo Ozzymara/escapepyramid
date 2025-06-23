@@ -47,18 +47,21 @@ setTimeout(function () {
                 <button onclick="choosePath('gas_explosion')">Light the lighter</button>
                 <button onclick="choosePath('sarcophagus')">Leave the lighter and push the stone enclosure above you</button>
             `;
+            storyText.scrollTop = 0;
         }
 
         // YOU LIGHT UP THE LIGHTER AND EXPLODE //
         else if (choice === "gas_explosion") {
             storyText.innerHTML = "You strike the lighter with a hopeful click, <br> craving a sliver of light  <br> to pierce the tomb’s endless dark. <br>  <br> However, you failed to notice  <br> the bitter scent that lingered in the air <br> an ancient gas, sealed for centuries, waiting... <br>  <br> The moment a spark flickers into life,  <br> golden light dances across carved warnings. <br> Suddenly, the enclosed space is filled with intense flame  <br> and everything erupts. <br> <br> Fire surges through the chamber like a vengeful spirit,  <br> devouring stone, cloth, and flesh.  <br>  <br> The silence returns just as quickly ... <br>";
             choices.innerHTML = `<button onclick="choosePath('restart')">Reincarnate</button>`;
+            storyText.scrollTop = 0;
         }
 
         // YOU DECIDE TO IGNORE THE LIGHTER AND PUSH THE LID //
         else if (choice === "sarcophagus") {
             storyText.innerHTML = "As you are about to flick your lighter, <br> you notice an odd gas smell.  <br> Perhaps leaving the lighter is safer. <br>  <br> You push against the heavy stone lid above you.  <br> As it begins to shift, you realise you are in a sarcophagus. <br>";
             choices.innerHTML = `<button onclick="choosePath('tomb')">Break free</button>`;
+            storyText.scrollTop = 0;
         }
 
         // FOUNTAIN OR TORCH? //
@@ -68,6 +71,7 @@ setTimeout(function () {
  <button onclick="choosePath('fountain')">Look at the Fountain</button>
  <button onclick="choosePath('torch')">Follow the Torch</button>
             `;
+            storyText.scrollTop = 0;
         }
 
         if (choice === "fountain") {
@@ -76,6 +80,7 @@ setTimeout(function () {
             choices.innerHTML = `
                 <button onclick="choosePath('torch')">Follow the Torch</button>
             `;
+            storyText.scrollTop = 0;
         }
         else if (choice === "torch") {
             storyText.innerHTML = "The tunnel narrows, the air thick with dust and mystery.<br> At the end stands an ancient stone door, etched with worn hieroglyphs.<br> A faint glow pulses beneath its surface.<br> As you step closer, a deep voice echoes:<br><br>“Password?”<br><br> Be warned!<br> Entering the wrong password <br>or not knowing the password<br> will invoke a curse  ... ";
@@ -85,13 +90,27 @@ setTimeout(function () {
                     <input id="passwordInput" type="text" placeholder="Enter Password">
                     <button onclick="checkPassword()">Submit</button>
                 `;
+                // Add Enter key support for password input
+                setTimeout(function() {
+                    var pwInput = document.getElementById('passwordInput');
+                    if (pwInput) {
+                        pwInput.addEventListener('keydown', function(e) {
+                            if (e.key === 'Enter') {
+                                checkPassword();
+                            }
+                        });
+                        pwInput.focus();
+                    }
+                }, 0);
             } else {
                 choices.innerHTML = `<button onclick="choosePath('curse')">Face the Curse</button>`;
             }
+            storyText.scrollTop = 0;
         }
         else if (choice === "curse") {
-            storyText.innerHTML = "A chilling wind howls through the chamber <br>as darkness swirls around you.<br><br> The ancient door trembles but does not yield.<br> Your answer was wrong.<br><br> Shadows coil like serpents <br>consuming the light.<br><br> A whisper echoes, final, and unrelenting. <br><br> The curse claims your soul,<br> sealing your fate <br>in eternal oblivion.";
+            storyText.innerHTML = "A chilling wind howls through the chamber <br>as darkness swirls around you.<br><br> The ancient door trembles but does not yield.<br> You had no knowledge of the password and you realise that you should have checked the fountain.<br><br> Shadows coil like serpents <br>consuming the light.<br><br> A whisper echoes, final, and unrelenting. <br><br> The curse claims your soul,<br> sealing your fate <br>in eternal oblivion.";
             choices.innerHTML = `<button onclick="choosePath('restart')">Reincarnate</button>`;
+            storyText.scrollTop = 0;
         }
         else if (choice === "restart") {
             location.reload();
@@ -103,23 +122,27 @@ setTimeout(function () {
                 <button onclick="choosePath('east')">Eastern Tunnel</button>
 
             `;
+            storyText.scrollTop = 0;
         }
         else if (choice === "boulders") {
             storyText.innerHTML = "The ground trembles violently, <br>sending dust plumes into the air. <br><br> A deafening roar fills the tunnel as massive boulders break loose from the crumbling ceiling. <br><br> You scramble for cover, <br>but it is too late—<br>the stones slam down,<br> sealing your fate <br><br> in eternal darkness.";
             choices.innerHTML = `<button onclick="choosePath('restart')">Reincarnate</button>`;
+            storyText.scrollTop = 0;
         }
 
         else if (choice === "east") {
-            storyText.innerHTML = "After walking for a while down the eastern tunnel <br> you approach an opening <br> to a colossal echoing stone chamber <br>  <br> Another door directly opposite now faces you. <br> To reach the door,  <br> you must first cross a precarious looking rope bridge. <br> <br>  Near you hangs a rickety ladder  <br> leading up into the darkness ...";
+            storyText.innerHTML = "After walking for a while down the eastern tunnel <br> you approach an opening <br> to a colossal echoing stone chamber <br>  <br> Another door directly opposite now faces you. <br> To reach the door,  <br> you must first cross a precarious-looking rope bridge. <br> <br>  Near you hangs a rickety ladder  <br> leading up into the darkness ...";
             choices.innerHTML = `
 <button onclick="choosePath('bridge')"> Cross the Bridge and Head to the door</button>
 <button onclick="choosePath('ladder')">Climb the ladder</button>`;
+            storyText.scrollTop = 0;
         }
 
         // BRIDGE //
         if (choice === "bridge") {
-            storyText.innerHTML = "You feel that crossing the bridge is safer. <br> You bravely set out across the bridge  <br> and all is going well...  <br> until you reach half way  <br>  <br> and hear a load <br> - SNAP -  <br>  <br> You fall deep <br> and crash onto the hard stone floor of a pit. <br> Your bones break <br>  and you are unable to move. <br>  <br> In your despair,  <br> you find yourself surrounded  <br> by vengeful venomous hungry cobras. <br>  <br> Death awaits you. <br>";
+            storyText.innerHTML = "You feel that crossing the bridge is safer. <br> You bravely set out across the bridge  <br> and all is going well...  <br> until you reach halfway  <br>  <br> and hear a load <br> - SNAP -  <br>  <br> You fall deep <br> and crash onto the hard stone floor of a pit. <br> Your bones break <br>  and you are unable to move. <br>  <br> In your despair,  <br> you find yourself surrounded  <br> by vengeful venomous hungry cobras. <br>  <br> Death awaits you. <br>";
             choices.innerHTML = `<button onclick="choosePath('restart')">Reincarnate</button>`;
+            storyText.scrollTop = 0;
         }
 
         // LADDER //
@@ -128,6 +151,7 @@ setTimeout(function () {
             choices.innerHTML = `
 <button onclick="choosePath('jackpot')"> Keep going </button>
 <button onclick="choosePath('bridge')"> Climb down the ladder and take the bridge</button>`;
+            storyText.scrollTop = 0;
         }
 
         else if (choice === "jackpot") {
@@ -142,18 +166,20 @@ setTimeout(function () {
         </div>
         <button onclick="playJackpot()">Pull the lever</button>
     `;
+            storyText.scrollTop = 0;
         }
     }
 
 function checkPassword() {
     let userPassword = document.getElementById("passwordInput").value.trim();
 
-    if (userPassword.toLowerCase() === "]") {
+    if (userPassword.toLowerCase() === "ozzymandias") {
         choosePath("tunnel"); // Proceed if correct
     } else {
         storyText.innerHTML = "💀 <br>The chamber trembles as ancient mechanisms groan to life.<br> A hiss fills the air—sand spills from unseen vents, <br>rushing like a tidal wave. <br>You claw at the walls, <br>but the golden grains rise, engulfing you. <br><br> Breath fades,<br> time slows… <br><br> the desert claims <br><br> another lost soul.";
         storyImage.src = imageMap.buried; // Send player to sand death scene if password is incorrect
         choices.innerHTML = `<button onclick="choosePath('restart')">Reincarnate</button>`;
+        storyText.scrollTop = 0;
     }
 }
 
