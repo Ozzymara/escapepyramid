@@ -667,11 +667,11 @@ A special thank you also to:<br>
 • Include a light/dark mode feature  
 • Side-by-side view of the image and story box in laptop and desktop modes  
 • Set a timer and difficulty level  
-• Include a progress tracking feature
-• Include a completion feedback section
-• Include optional bonus rooms
-• Allow customisable themes
-• Resolve storage capacity issue to allow updates
+• Include a progress tracking feature  
+• Include a completion feedback section  
+• Include optional bonus rooms  
+• Allow customisable themes  
+• Resolve storage capacity issue to allow updates  
 
 <details>
 <summary>Click to view provisional design for future updates</summary>
