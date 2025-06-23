@@ -76,7 +76,7 @@ As part of a portfolio project for the [Code Institute Full Stack Software Devel
 
 # 🧐 UX Design
 
-Designing a website that prioritises mental health requires a thoughtful approach that balances aesthetics, accessibility, and user experience.
+Designing a website that prioritises user interaction requires a thoughtful approach that balances aesthetics, accessibility, and user experience.
 
 ## 👤 User stories
 
