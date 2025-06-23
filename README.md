@@ -453,14 +453,14 @@ With these configurations, the project now passes linting with zero warnings, en
 3. JS Hint
 <details>
 <summary>Click to view JS Hint validation results</summary>
-<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/jshint.webp" alt="JS validation results" style="width:60%;"></details><br>
+<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/jshint.webp" alt="JS validation results" style="width:80%;"></details><br>
 
 JS Hint – Having addressed the strictness test via JS Lint, JS Hint provides a more relaxed response to JavaScript issues. Because this project uses a modern script, JS Hint was configured to allow 'New JavaScript features (ES6)'. <span style="color:#39FF14">No errors</span> are found in the current version of the game.
 
 4. WAVE
 <details>
 <summary>Click to view WAVE results</summary>
-<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/wave.webp" alt="Wave results" style="width:40%;"></details><br>
+<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/wave.webp" alt="Wave results" style="width:80%;"></details><br>
 
 WAVE (Web Accessibility Evaluation Tool) Accessibility was used to audit for the HTML and UI, which scans the rendered page for issues like missing alt text, poor contrast, and improper heading structure. The focus is on the way the output serves users with disabilities. 
 <span style="color:#39FF14">No errors</span> are detected in the current version. 
