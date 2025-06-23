@@ -179,7 +179,7 @@ Background image for the main body
 
 <details>
 <summary>Click to view background image</summary>
-<img src="assets/images/main.webp" alt="background image" style="width:30%;"></details>
+<img src="assets/images/main.webp" alt="background image" style="width:50%;"></details>
 <br>
 The background image is intended to create an impression of an ancient, mysterious, and intricate wall or surface. The image consists of a repeating pattern of dark-brown, square blocks that cover the entire image. Each block has carved or embossed ancient hieroglyphs. The lighting in the image casts subtle shadows and highlights, enhancing the three-dimensional texture of the carved blocks and giving a sense of depth to the wall of squares.<br><br>
 
@@ -229,7 +229,7 @@ This website is designed for clarity and ease of use and is structured to encour
 <details>
 <summary>Click to view browser title</summary>
 
-<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/tabs.webp" alt="Browser title" style="width:30%;"></details><br>
+<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/tabs.webp" alt="Browser title" style="width:50%;"></details><br>
 
 • The title of the website, "🏺 Pyramid Escape" appears at the top of the browser tab and at the top of the page. This makes it easy for users to recognise and understand the nature of the game.<br>
 
@@ -253,7 +253,7 @@ This website is designed for clarity and ease of use and is structured to encour
 
 <details>
 <summary>Click to view the images section</summary>
-<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/image-section.webp" alt="Images section" style="width:30%;"></details><br>
+<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/image-section.webp" alt="Images section" style="width:50%;"></details><br>
 
 • This section displays AI-generated images to illustrate the text in the story section.  
 • The quotes are displayed within a border that glows.
@@ -262,7 +262,7 @@ This website is designed for clarity and ease of use and is structured to encour
 
 <details>
 <summary>Click to view the story box section</summary>
-<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/story.webp" alt="Story box section" style="width:30%;"></details><br>
+<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/story.webp" alt="Story box section" style="width:50%;"></details><br>
 
 • [Bootstrap cards](https://getbootstrap.com/docs/5.3/components/card/) are placed in a grid layout, meaning they arrange themselves automatically to fit different screen sizes. On larger screens, they appear side by side, while on smaller screens, they stack vertically.  
 
@@ -270,7 +270,7 @@ This website is designed for clarity and ease of use and is structured to encour
 
 <details>
 <summary>Click to view the buttons section</summary>
-<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/buttons.webp" alt="Button section" style="width:30%;"></details><br>
+<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/buttons.webp" alt="Button section" style="width:50%;"></details><br>
 
 • There are big, colourful buttons styled with Camel and Jet Black colours, ensuring a strong 8.2 contrast ratio—perfect for interactive elements while remaining visually immersive.  
 • These buttons are designed to stand out, making them easy to find.  
@@ -359,7 +359,6 @@ Pyramid Escape
 ├── assets/  
 │ ├── audio/  
 │ ├── css/  
-│ ├── documentation/  
 │ └── images/  
 │ └── js/  
 
@@ -408,7 +407,7 @@ Additionally, the use of explicit ARIA role attributes (e.g. role="button", role
 ## [✅ CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_input)
 <details>
 <summary>Click to view CSS validation results</summary>
-<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/css-val.webp" alt="CSS validation results" style="width:30%;">
+<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/css-val.webp" alt="CSS validation results" style="width:50%;">
 
 [Click to view live CSS validation](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fozzymara.github.io%2Fpyramidescape%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)  
 </details><br>
@@ -434,14 +433,14 @@ To ensure code clarity, consistency, and maintainability across all modern envir
 
 <details>
 <summary>Click to view Piliapp validation results</summary>
-<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/PiliApp.webp" alt="PiliApp results" style="width:30%;"></details><br>
+<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/PiliApp.webp" alt="PiliApp results" style="width:50%;"></details><br>
 
 Piliapp was used as a quick JavaScript validator for a fast, browser-based scan to catch obvious syntax issues. This linter offers visual error highlights and cross-checking for compatibility or missed typos across versions.
 
 2. JS Lint
 <details>
 <summary>Click to view JS Lint validation results</summary>
-<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/jslint.webp" alt="JS validation results" style="width:30%;"></details><br>
+<img src="https://raw.githubusercontent.com/Ozzymara/docpe/refs/heads/main/assets/documentation/jslint.webp" alt="JS validation results" style="width:50%;"></details><br>
 
 JSLint was then used to enforce strict style and enforce structure. It enforces Douglas Crockford’s original best practices and guards against unsafe language features. Furthermore, JS Lint  catches deep structural or stylistic flaws early.
 
